@@ -1,0 +1,22 @@
+/* Keep brand artwork on a stable plane; no rotating filter-heavy layers. */
+.sticker-playground,.sticker-stage,.sticker-playground .desk-sticker{perspective:none}
+.sticker-playground .desk-sticker{filter:none;transition:none}
+.sticker-playground .desk-sticker:hover,.sticker-playground .desk-sticker:focus-visible{filter:none}
+.sticker-playground .desk-sticker .sticker-face{animation:none;transform:translateY(0);transform-style:flat;transition:transform 180ms ease-out}
+.sticker-playground .desk-sticker .sticker-face img,.sticker-playground .sticker-face strong{transform:none}
+.sticker-playground:not(.motion-enabled) .desk-sticker:hover .sticker-face,.sticker-playground:not(.motion-enabled) .desk-sticker:focus-visible .sticker-face{transform:translateY(-3px)}
+.sticker-playground.motion-enabled .desk-sticker .sticker-face{animation:calmStickerDrift 12s ease-in-out infinite;transition:none}
+.sticker-playground.motion-enabled.desk-still .desk-sticker .sticker-face{animation-play-state:paused}
+.sticker-playground.motion-enabled .desk-sticker:hover .sticker-face,.sticker-playground.motion-enabled .desk-sticker:focus-visible .sticker-face,.sticker-playground .being-dragged .sticker-face{animation-play-state:paused}
+.sticker-playground .being-dragged .sticker-face{transform:none;transition:none}
+.sticker-playground .cutout-caption{pointer-events:none}
+@keyframes calmStickerDrift{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+.strip-track{backface-visibility:hidden;animation-duration:95s}
+.strip-stopped .strip-track{will-change:auto}
+.technology-strip:not(.strip-stopped) .strip-track{will-change:transform}
+.strip-track ul{box-sizing:border-box}
+.strip-logo{flex-shrink:0}
+.brand-mark img{filter:none}
+@media(hover:none){.sticker-playground .desk-sticker .sticker-face{transition:none}.sticker-playground .cutout-caption{display:none}}
+@media(prefers-reduced-motion:reduce){.sticker-playground .desk-sticker .sticker-face{animation:none!important;transition:none!important;transform:none!important}}
+.reduced-motion .sticker-playground .desk-sticker .sticker-face{animation:none!important;transition:none!important;transform:none!important}
