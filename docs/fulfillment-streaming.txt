@@ -1,0 +1,19 @@
+# Fulfillment Event Streaming Brief
+
+## Objective
+
+Build a zero-cost portfolio project that identifies delivery exceptions from real Kafka traffic and proves recovery from duplicates, lateness, invalid records, and consumer failure. The owner is a certified Databricks Data Engineer Associate with three years of practice and an 8 GB Windows computer.
+
+Read `PORTFOLIO-PLAN.md` for the detailed design and limits. Keep local live streaming separate from Databricks replay. Use a Kafka broker, Python producer/consumer, SQLite durable state, and immutable event archives locally. Use Databricks for PySpark, Delta, and analytical marts after explicit upload. Power BI displays exported reporting snapshots.
+
+## First milestone
+
+Confirm the environment and budget, then agree on contracts and the smallest vertical slice: seeded parcel events -> Kafka -> durable consumer state -> expected result. Prove restart before expanding scope. Do not run local Spark or a monitoring stack alongside the broker on this machine.
+
+## Required evidence
+
+Duplicate-safe state, commit-after-durability, crash recovery, quarantine and repair, consumer reassignment, archive completeness, a documented late-event correction, and a reproducible Databricks replay. Record measured latency and memory with test inputs. One broker is not high availability.
+
+## Suggested opening message
+
+> Read PORTFOLIO-PLAN.md and briefs/FULFILLMENT-STREAMING.md. Help me implement this project step by step. First inspect the workspace and check the zero-cost setup for my 8 GB Windows computer. I am certified in Databricks Data Engineer Associate and have practiced Databricks for over three years. Start with contracts, expected results, and one live Kafka vertical slice. Explain the decisions and let me understand each milestone. Keep live local streaming and Databricks captured-event replay explicitly separate. Record progress and evidence in files. Do not scaffold the entire stack or generate every implementation at once.

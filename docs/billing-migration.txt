@@ -1,0 +1,21 @@
+# Subscription Billing Reporting Migration Brief
+
+## Objective
+
+Migrate synthetic subscription billing reporting from PostgreSQL to Delta with real log-based CDC, deterministic replay, financial reconciliation, and a controlled reporting cutover. PostgreSQL remains the operational write authority.
+
+Read `PORTFOLIO-PLAN.md` for detailed responsibilities. Use PostgreSQL plus a small Debezium Engine Java runner locally, durable snapshot/change segments, explicit Databricks upload, PySpark/Spark SQL target processing, and Power BI snapshots. The machine has 8 GB RAM; stop the Kafka project before running this capture setup.
+
+## First milestone
+
+Define table grains, finance metrics, type mappings, and acceptance rules. Prove a real initial snapshot followed by insert/update/delete and restart. Confirm memory use before building the wider migration. Use a tested connector/Java combination and persist source offsets.
+
+## Required evidence
+
+Durable capture before acknowledgment, snapshot/CDC boundary, source identity and ordering, delete handling, idempotent current-state and history, matched-frontier key and monetary reconciliation, incompatible-schema rejection, WAL retention monitoring, cutover rejection, and successful reporting rollback.
+
+Timestamp polling must be labeled incremental batch rather than log-based CDC. Manual upload proves target replay, not continuous cloud replication. A brief synthetic-writer pause in the cutover rehearsal does not prove zero downtime.
+
+## Suggested opening message
+
+> Read PORTFOLIO-PLAN.md and briefs/BILLING-MIGRATION.md. Help me build the billing reporting migration step by step on an 8 GB Windows computer with zero spend. Start with source schema, metric definitions, acceptance criteria, and a feasibility test of PostgreSQL plus Debezium Engine. Keep the Java capture runner minimal and the business logic in Python/SQL. Prove snapshot, inserts, updates, deletes, durable capture, and restart before expanding. Then implement Databricks target replay, SCD Type 2, reconciliation, and a reporting cutover rehearsal. Record evidence and progress. Do not present file replay or timestamp polling as continuous log-based replication.

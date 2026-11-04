@@ -1,0 +1,19 @@
+# Data Platform Architecture Case Study Brief
+
+## Objective
+
+Design a delivery marketplace data platform using the measured lessons from the lakehouse, fulfillment streaming, and billing migration projects. Deliver a focused architecture case study and a few executable sizing calculations, rather than another full platform.
+
+Read `PORTFOLIO-PLAN.md`. Prototype evidence comes from an 8 GB Windows computer and Databricks. Production infrastructure is a proposed design unless separately implemented and verified.
+
+## First milestone
+
+Inspect existing project evidence, define users and decisions, and agree on illustrative traffic, freshness, retention, recovery, governance, and budget assumptions. Compare two or three plausible approaches before selecting one.
+
+## Required evidence
+
+Context and component diagrams, architecture decisions, capacity and catch-up calculations, freshness objectives, RTO/RPO, failure matrix, access and deletion design, deployment/CI design, cost assumptions, and an operations runbook. Separate measured, simulated, and designed capabilities throughout.
+
+## Suggested opening message
+
+> Read PORTFOLIO-PLAN.md and briefs/PLATFORM-ARCHITECTURE.md. Help me create a senior-quality data engineering architecture case study grounded in evidence from my completed projects. Start with business requirements and explicit assumptions, compare approaches, and then develop diagrams, decisions, capacity calculations, recovery plans, governance, deployment boundaries, and cost reasoning. Keep the case study within roughly 25–40 focused hours. Use small calculations or existing-project experiments for uncertain points. Do not deploy paid services or describe production capabilities as tested when they are only designed.
