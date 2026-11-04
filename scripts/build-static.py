@@ -2,7 +2,7 @@
 from pathlib import Path
 import re,hashlib
 root=Path(__file__).resolve().parents[1];dist=root
-sources=['styles.css','studio.css','stickers.css','cutout.css','review.css','finishing.css','certifications.css','photo-print.css','polish.css','pipelines.css','hero-refine.css','theme-details.css','motion-polish.css']
+sources=['styles.css','studio.css','stickers.css','cutout.css','review.css','finishing.css','certifications.css','photo-print.css','polish.css','pipelines.css','hero-refine.css','theme-details.css','motion-polish.css','prism.css']
 css='\n'.join('/* '+name+' */\n'+(dist/name).read_text(encoding='utf8') for name in sources)
 (dist/'site.css').write_text(css,encoding='utf8')
 digest=hashlib.sha256(css.encode()).hexdigest()[:12]

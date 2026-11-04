@@ -73,3 +73,12 @@ Repository links remain clearly labeled placeholders. Replace the `null` entries
 The resume and certificates included here are downloadable website content. All files uploaded to a public GitHub repository are publicly accessible.
 
 No new reuse license is granted by this package. Third-party logos, fonts and other materials retain their respective owners' rights and applicable terms. Logo source records are retained in `brands/sources.json`. Google Fonts are loaded remotely, with local font fallbacks.
+
+
+## Prism 3D Studio integration — 4 November 2026
+
+`prism.js` owns the product record, featured card, cover layout, dedicated case study, screenshot selector and illustrative business use cases. `prism.css` owns its styles and is included last in the CSS build. `app.js` registers the product and routes; `resume.js` puts the featured product first in the catalog; `review.js` links web/data-app skills to Prism.
+
+The `images/prism-*.jpg` files are real browser screenshots. `docs/prism-pharma-demo.csv` is synthetic demonstration data. `docs/prism-evidence.md` records sources and observed workflows. There are no customer testimonials, adoption claims or invented business outcomes.
+
+The verified compiled demo is currently linked at `https://yogaagnesh.github.io/prism-3d-studio/docs/`. The repository-root page was serving the unbuilt development template during review. If the Prism repository is changed to publish `main` → `/docs`, update `prismLinks.demo` in `prism.js` to the shorter root URL after verifying it. This does not change this portfolio's own Pages setting: it still uses `main` → `/(root)`.
