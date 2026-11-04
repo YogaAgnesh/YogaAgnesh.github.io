@@ -177,19 +177,47 @@ body:has(.sticker-hero){position:relative;padding-top:24px}body:has(.sticker-her
 @media(max-width:900px){.prism-feature .card-body{padding:26px}.prism-cover{padding:22px}.prism-edition{display:none}.prism-case-header{gap:30px}.prism-case>.prism-cover{min-height:0;padding:30px}.prism-case>.prism-cover .prism-cover-window{width:100%;margin:0}.prism-editorial,.prism-evidence{gap:32px}.prism-usecase-panel{padding:26px}.prism-usecase-panel dl{grid-template-columns:1fr;gap:15px}}
 @media(max-width:680px){.project-card.prism-feature{grid-template-columns:1fr}.prism-feature .prism-cover-title{font-size:54px;margin:25px 0 20px}.prism-cover-window{margin-left:5%}.prism-feature h3{font-size:40px}.prism-feature .card-body{padding:24px}.prism-case-header{grid-template-columns:1fr;gap:14px;padding:28px 0 34px}.prism-case-header h1{font-size:68px}.prism-case-header>div>p{font-size:17px}.prism-product-note{display:none}.prism-case>.prism-cover{display:block;padding:22px}.prism-case>.prism-cover .prism-cover-title{font-size:58px;max-width:none;margin:26px 0}.prism-case>.prism-cover .prism-cover-window{width:94%;margin:0 0 0 auto;transform:rotate(-3deg)}.prism-cover-bottom{gap:12px;align-items:flex-start;font-size:9px}.prism-specs{grid-template-columns:1fr 1fr;gap:24px}.prism-specs>div:nth-child(2){border:0}.prism-section-nav{gap:5px 20px}.prism-editorial,.prism-evidence{grid-template-columns:1fr;gap:20px;padding:55px 0}.prism-gallery-section,.prism-usecases,.prism-engineering{padding:55px 0}.prism-editorial .prism-lead{font-size:20px}.prism-usecase-layout{grid-template-columns:1fr}.prism-usecase-buttons button{min-height:58px}.prism-usecase-panel{min-height:0;padding:24px}.prism-closing{padding:30px 18px}.prism-actions{align-items:stretch}.prism-actions>a{justify-content:center}.prism-case .section-title{display:block}.prism-flow{grid-template-columns:1fr 1fr}.prism-gallery-buttons button{flex:1;padding:10px 12px}.prism-window-bar{font-size:8px;padding:8px 10px}}
 @media(prefers-reduced-motion:reduce){.prism-cover-window{transition:none!important;transform:none!important}}.reduced-motion .prism-cover-window{transition:none!important;transform:none!important}
-/* Compact catalog card; override inherited sticker rotations on the home page. */
-body .project-grid .project-card.prism-feature{grid-column:auto;display:flex;flex-direction:column;background:#fff9ed!important;border:1px solid #cbbfdb!important;border-radius:12px;overflow:hidden;transform:none!important}
-body .project-grid .prism-feature .visual-link{height:260px!important;min-height:0!important;transform:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:hidden}
-body .project-grid .prism-feature .prism-cover{height:260px;padding:18px;transform:none!important}
-body .project-grid .prism-feature .prism-brand{font-size:17px}.prism-feature .prism-brand svg{width:27px;height:30px}
-body .project-grid .prism-feature .prism-cover-title{font-size:28px;margin:14px 0;max-width:none}
-body .project-grid .prism-feature .prism-cover-window{position:absolute;width:58%;right:15px;bottom:16px;margin:0;transform:none!important;border-radius:6px}
-body .project-grid .prism-feature .prism-cover-bottom,body .project-grid .prism-feature .prism-edition,body .project-grid .prism-feature .prism-window-bar{display:none}
-body .project-grid .prism-feature .card-body{padding:24px;display:block}
-body .project-grid .prism-feature h3{font-size:32px;margin:15px 0}
+/* Shared catalog geometry: artwork and action rows align across every project. */
+body .project-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;align-items:stretch;grid-auto-rows:1fr}
+body .project-grid .project-card{grid-column:auto;display:flex;flex-direction:column;min-width:0;background:#fff9ed!important;border:1px solid #bdc9b4!important;border-radius:14px!important;overflow:hidden;transform:none!important;box-shadow:none!important}
+body .project-grid .project-card .visual-link{display:block;flex:none;height:340px!important;min-height:0!important;margin:0!important;padding:0;transform:none!important;border:0!important;border-bottom:1px solid #bdc9b4!important;border-radius:0!important;box-shadow:none!important;overflow:hidden}
+body .project-grid .project-card .pipeline-diagram{height:100%;display:flex;flex-direction:column;justify-content:center;border:0;padding:22px}
+body .project-grid .project-card .card-body{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;flex:1;min-width:0;padding:24px!important;border:0}
+body .project-grid .project-card .card-meta{min-height:30px;gap:10px;flex-wrap:wrap}
+body .project-grid .project-card h3{font:400 30px/1.22 'Anton',sans-serif;margin:15px 0;color:#203d32}
+body .project-grid .project-card p{font-size:14px;line-height:1.75;max-width:none}
+body .project-grid .project-card .tags{margin:12px 0 22px;gap:6px}
+body .project-grid .project-card .card-actions{margin-top:auto;display:flex;gap:12px;align-items:center;justify-content:space-between;width:100%}
+body .project-grid .project-card .repository-link{flex-basis:100%;margin-top:4px;min-height:62px}
 body .project-grid .prism-feature .prism-feature-intro,body .project-grid .prism-feature .prism-feature-points{display:none}
-body .project-grid .prism-feature .tags{margin:16px 0}.prism-feature .card-actions{gap:18px}
+.prism-tile{height:100%;display:flex;flex-direction:column;background:#ede8fb;color:#282044;padding:16px 20px 12px}
+.prism-tile-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;font:11px/1.4 'IBM Plex Mono',monospace}
+.prism-tile .prism-brand{font-size:19px}.prism-tile .prism-brand svg{width:29px;height:32px}
+.prism-tile-chart{position:relative;flex:1;min-height:0;margin:12px 0;background:white;overflow:hidden;border:1px solid #d6ccea;border-radius:8px}
+.prism-tile-chart img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 65%}
+.prism-tile-caption{display:flex;justify-content:space-between;gap:10px;font:9px/1.4 'IBM Plex Mono',monospace;color:#584b73}
+@media(max-width:900px){body .project-grid{grid-template-columns:1fr;grid-auto-rows:auto}body .project-grid .project-card .visual-link{height:340px!important}}
+@media(max-width:480px){body .project-grid .project-card .visual-link{height:auto!important;min-height:300px!important}body .project-grid .project-card .pipeline-diagram{height:auto;min-height:300px;padding:18px}body .project-grid .prism-feature .visual-link{height:300px!important}body .project-grid .project-card .card-body{padding:20px!important}.prism-tile{padding:14px}.prism-tile-heading>span:last-child{max-width:12ch;font-size:10px}.prism-tile-caption{font-size:8px}}
 .portrait-name-badge{overflow:visible}.portrait-name-badge .hello-top{border-radius:10px 10px 0 0}
 .portrait-name-badge .badge-hi{position:absolute;right:-20px;top:-23px;width:78px;height:70px;z-index:6;transform:rotate(12deg);filter:drop-shadow(2px 3px 0 #14372d55);pointer-events:none}
 .portrait-name-badge .badge-star{position:absolute;left:-19px;top:76px;width:44px;height:44px;z-index:6;transform:rotate(-12deg);pointer-events:none}
 @media(max-width:480px){.portrait-name-badge .badge-hi{width:64px;right:-12px;top:-18px}.portrait-name-badge .badge-star{width:35px;left:-12px}.prism-feature .prism-cover-title{font-size:25px!important}}
+
+/* Thumbnail diagrams summarize the flow; case studies retain full node detail. */
+body .project-grid .project-card .visual-link{height:380px!important}
+body .project-grid .pipeline-node{padding:9px 7px;gap:5px}
+body .project-grid .pipeline-heading{margin-bottom:14px}
+body .project-grid .pipeline-transfer{padding:8px 0}
+body .project-grid .pipeline-controls{margin-top:12px;padding-top:10px}
+@media(max-width:480px){
+body .project-grid{grid-auto-rows:1fr}
+body .project-grid .project-card .visual-link,body .project-grid .prism-feature .visual-link{height:360px!important;min-height:360px!important}
+body .project-grid .project-card .pipeline-diagram{height:100%;min-height:0;padding:14px}
+body .project-grid .pipeline-lane{flex-direction:row;gap:16px}
+body .project-grid .pipeline-node{display:flex;flex-direction:column;text-align:center;padding:9px 4px;gap:6px}
+body .project-grid .pipeline-node strong{font-size:11px;overflow-wrap:anywhere}
+body .project-grid .pipeline-detail{display:none}
+body .project-grid .pipeline-node+.pipeline-node:before{content:'→';left:-17px;top:50%;width:16px;height:auto;transform:translateY(-50%);font-size:17px}
+body .project-grid .pipeline-heading{font-size:12px}
+body .project-grid .pipeline-controls,body .project-grid .pipeline-transfer{font-size:9px}
+}

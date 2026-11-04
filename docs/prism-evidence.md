@@ -41,3 +41,7 @@ The author confirmed there are no real users to cite. Accordingly, the portfolio
 The shorter root URL initially served the development template and raised `ReferenceError: __PRISM_HOSTED__ is not defined`. The compiled app at `/docs/` worked. The portfolio therefore links to `/docs/`. Publishing the Prism repository from `main` → `/docs` is the appropriate configuration change for the shorter URL; no code change was made to Prism as part of this portfolio update.
 
 Final cover update: the synthetic dataset was switched to Prism's recommended Revenue (USD) grid. The captured surface uses summed revenue by Therapy area and Period. Both categorical axes use encoded spacing; the surface does not imply continuous observations. Workspace and fullscreen screenshots were recaptured from the running app.
+
+
+## Surface capture correction — 4 November 2026
+The previous surface and workspace captures were corrupted and are no longer referenced. `prism-surface-v3.png` is a visually verified viewport capture from the deployed app with `prism-surface-demo.csv`: 1,600 points, numeric binning disabled, surface contours disabled. All values are synthetic. The gallery retains the verified Story Builder capture and the new surface capture.
